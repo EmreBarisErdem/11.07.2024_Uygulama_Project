@@ -11,7 +11,8 @@ const Card = ({tarif,deleteRecipe}) => {
         <h5>{tarif.title}</h5>
         <p>{tarif.description}</p>
       </div>
-      <div className="buttons">
+      
+      <div className="card-button">
       <button onClick={() => deleteRecipe(tarif.id)} className='deleteBtn'>Delete</button>
 
       </div>
