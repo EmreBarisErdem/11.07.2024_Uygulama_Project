@@ -46,21 +46,24 @@ main form{
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     width: 50%;
 }
 main form input{
     height: 30px;
     border: solid 2px grey;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 18px;
+    font-family: monospace;
+    
     
 }
 main form textarea{
     height: 60px;
     border: solid 2px grey;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 18px;
+    font-family: monospace;
 }
 main form button{
     background-color: black;
@@ -73,6 +76,15 @@ main form button{
 main form button:hover{
     background-color: rgba(141, 203, 41, 0.797);
     color: black;
+}
+main form p{
+    color: red;
+    font-size: 15px;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+
+
 }
 .card-list{
     display: flex;
