@@ -3,7 +3,7 @@ import Header from './components/Header'
 import Main from './components/Main'
 import CardList from './components/CardList'
 import axios from 'axios';
-import './App.css'
+import './assets/style/App.scss'
 
 function App() {
 

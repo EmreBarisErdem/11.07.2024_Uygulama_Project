@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    
+}
+nav{
+    img{
+        width: 100px;
+        height: 100px;
+        background: none;
+        box-shadow: 0 0 6px rgb(255, 0, 0);
+        opacity: 0.9;
+        border: 1px solid black;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(rgba(210, 76, 76, 0.647),rgba(178, 124, 193, 0.521));
+        color: rgb(0, 0, 0);
+        padding: 5px 40px;
+        font-size: 24px;
+        text-shadow: 0 0 1px black;
+        border-bottom: 1px solid rebeccapurple;
+        h4{
+            cursor: default;
+            font-size: 30px;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            li{
+                transition: 0.4s;
+                &:hover{
+                    color: rgb(255, 255, 255);
+                    cursor: pointer;
+                    scale: 1.1;
+                    text-shadow: 0 0 4px rgb(255, 91, 91);
+                }
+            }
+        }
+    }
+}
+
+
+main{
+    background:  linear-gradient(#000000a7,#00000011), url("../img/background-img.jpg");
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+    form{
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 50%;
+        input{
+            height: 40px;
+            border: solid 2px #d7198b;
+            border-radius: 5px;
+            font-size: 22px;
+            font-family: monospace;
+            opacity: 0.8;
+            background:linear-gradient(to right,pink,rgba(153, 183, 91, 0.774));
+            
+        }
+        textarea{
+            opacity: 0.8;
+            height: 60px;
+            border: solid 2px #d7198b;
+            border-radius: 5px;
+            font-size: 22px;
+            font-family: monospace;
+            background:linear-gradient(to right,pink,rgba(153, 183, 91, 0.774));
+        }
+        p{
+            color: red;
+            font-size: 20px;
+            padding: 0;
+            text-align: center;
+            margin: 0;
+        
+        
+        }
+        button{
+            background-color: rgba(0, 0, 0, 0.746);
+            font-size: 20px;
+            color: #ff0099;
+            border-radius: 4px;
+            height: 40px;
+            cursor: pointer;
+            transition: 0.4s;
+            &:hover{
+                background-color: rgba(141, 203, 41, 0.797);
+                color: black;
+            }
+        }
+    }
+}
+
+.card-list{
+    background-image: linear-gradient( to bottom, #FAD7A1 10%, #E96D71 100%);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin:  auto;
+    padding: 10px;
+    justify-content: center;
+    border: 1px solid black;
+    .card{
+        background-image: linear-gradient(to bottom, #b20e3f 0%, #fee140 70%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border: solid 1px rgba(244, 142, 142, 0.431);
+        box-shadow: 0 0 6px orangered;
+        width: 250px;
+        height: auto;
+        padding: 10px 5px;
+        border-radius: 10px;
+        img{
+            width: 90%;
+            height: 200px;
+            border: 1px solid rgb(132, 132, 132);
+            border-radius: 10px;
+            box-shadow: 0 0 5px black;
+            cursor: pointer;
+        }
+        .card-button{
+            display: flex;
+            gap: 20px;
+            
+            .deleteBtn{
+                
+                background: linear-gradient( #ffffffa1, rgb(146, 68, 68), #ffffffa1);
+                width: 60px ;
+                height: auto;
+                border-radius: 5px;
+                border: solid 2px rgb(0, 0, 0);
+                transition: 0.4s;
+                &:hover{
+                background: red;
+                cursor: pointer;
+               }
+            }
+            .editBtn{
+                background: linear-gradient(grey,yellowgreen,grey);
+                width: 60px ;
+                height: auto;
+                border-radius: 5px;
+                border: solid 2px rgb(0, 0, 0);
+                transition: 0.4s;
+               &:hover{
+                background: rgb(255, 195, 0);
+                cursor: pointer;
+               }
+            }
+
+        }
+    }
+    .card-body{
+        padding: 10px;
+        font-size: 15px;
+    }
+}
+
+
+
