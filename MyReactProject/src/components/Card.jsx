@@ -10,13 +10,13 @@ const Card = ({tarif, deleteRecipe, findRecipe}) => {
       <img src={tarif.image ? tarif.image : defaultRecipePic} alt="recipe-picture" />
 
       <div className="card-body">
-        <h5>{tarif.title}</h5>
+        <h4>{tarif.title}</h4>
         <p>{tarif.description}</p>
       </div>
       
       <div className="card-button">
-      <button onClick={() => deleteRecipe(tarif.id)} className='deleteBtn'><FaRegTrashCan  size={30}/></button>
-      <button onClick={()=> findRecipe(tarif.id)} className='editBtn'><RiEdit2Line size={30}/></button>
+      <button onClick={() => deleteRecipe(tarif.id)} className='deleteBtn'><FaRegTrashCan  size={40}/></button>
+      <button onClick={()=> findRecipe(tarif.id)} className='editBtn'><RiEdit2Line size={40}/></button>
 
       </div>
       

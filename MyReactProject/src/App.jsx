@@ -47,7 +47,7 @@ function App() {
 
 
   const addRecipe = async (newRecipe) => {
-    
+
     let url = "http://localhost:5174/fakeRecipes";
 
     if (!choosenRecipe) {
@@ -94,6 +94,7 @@ function App() {
 
   const findRecipe = (id) => {
     setChoosenRecipe(tarifler.find(tarif => tarif.id === id));
+    console.log(tarifler.find(tarif => tarif.id === id));
   }
 
   useEffect(() => {

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { MdOutlineAddCircleOutline } from "react-icons/md";
 
 const Main = ({ addRecipe, tarifler, choosenRecipe, setChoosenRecipe }) => {
 
@@ -58,20 +59,20 @@ const Main = ({ addRecipe, tarifler, choosenRecipe, setChoosenRecipe }) => {
 
   useEffect(() => {
     if (choosenRecipe) {
-      setRecipeTitle(choosenRecipe.recipeTitle);
-      setRecipeDescription(choosenRecipe.recipeDescription);
-      setImageURL(choosenRecipe.recipeImageURL);
+      setRecipeTitle(choosenRecipe.title);
+      setRecipeDescription(choosenRecipe.description);
+      setImageURL(choosenRecipe.image);
     }
   }, [choosenRecipe]); // secilen tarife bağımlı hale getirdik...
 
   return (
     <main>
-      <h2>Welcome to My Recipe Sharing Platform</h2>
-      <p>Lorem ipsum dolor sit amet.</p>
+      <h1>Welcome to Chef's Recipe Book Website</h1>
+      <p>You can create your own recipe book by using this website. So get creative and fill out the form below!</p>
 
       <form onSubmit={handleSubmit}>
 
-        <h4>{choosenRecipe ? "Update Your Recipe" : "Add A New Recipe"}</h4>
+        <h3>{choosenRecipe ? "Update Your Recipe" : "Add A New Recipe"}</h3>
 
         <input
           value={recipeTitle}
@@ -82,6 +83,7 @@ const Main = ({ addRecipe, tarifler, choosenRecipe, setChoosenRecipe }) => {
         {titleError ? <p></p> : <p>You must enter a recipe title!</p>}
 
         <textarea
+          
           value={recipeDescription}
           onChange={(e) => setRecipeDescription(e.target.value)}
           placeholder="Recipe Description"
@@ -96,7 +98,7 @@ const Main = ({ addRecipe, tarifler, choosenRecipe, setChoosenRecipe }) => {
         />
         {imageURLError ? <p></p> : <p>You must enter a image url!</p>}
 
-        <button disabled={recipeTitle === "" || recipeDescription === "" || recipeImageURL === ""} type="submit">{choosenRecipe ? "Update Your Recipe" : "Add Your Recipe"}</button>
+        <button disabled={recipeTitle === "" || recipeDescription === "" || recipeImageURL === ""} type="submit"><MdOutlineAddCircleOutline size={24}/> {choosenRecipe ? "Update Your Recipe" : "Add Your Recipe"}</button>
 
         <input 
         disabled={!choosenRecipe} 
