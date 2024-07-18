@@ -3,7 +3,7 @@ import defaultRecipePic from '../assets/img/defaultRecipePic.jpg'
 import { RiEdit2Line } from "react-icons/ri";
 import { FaRegTrashCan } from "react-icons/fa6";
 
-const Card = ({tarif,deleteRecipe,findRecipe}) => {
+const Card = ({tarif, deleteRecipe, findRecipe}) => {
   return (
     <div className='card'>
 

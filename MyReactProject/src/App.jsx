@@ -23,19 +23,10 @@ function App() {
     setTarifler(tarifler);
 
   }
-  
-  useEffect(() => {
 
-    getAsync();
 
-  }, [])
-  
   const postAsync = async (newPost) => {
 
-    //frontend
-    setTarifler(prev => [...prev, newPost]);
-
-    //backend
     const response = await axios.post(url, newPost);
 
   }
@@ -54,39 +45,40 @@ function App() {
     const response = await axios.patch(`${url}/${ID}`, { isDeleted: true });
   }
 
-  const editAsync = async (recipeToBeUpd) => {
-
-    //backend
-
-    url += `${choosenRecipe.id}`;
-
-    const response = await axios.put(url, recipeToBeUpd);
-
-    //frontend
-
-    setTarifler(prev => prev.map(recipe => {
-
-      if (recipe.id === choosenRecipe.id) {
-        return { ...response.data }
-      }
-      else {
-        return { ...recipe }
-      }
-
-    }))
-  }
-
 
   const addRecipe = async (newRecipe) => {
+    
+    let url = "http://localhost:5174/fakeRecipes";
 
     if (!choosenRecipe) {
 
+      //frontend
+      setTarifler(prev => [...prev, newRecipe]);
+      //backend
       postAsync(newRecipe);
 
     }
     else {
 
-      editAsync(newRecipe)
+      //backend
+
+      url += `${choosenRecipe.id}`;
+
+      const response = await axios.put(url, newRecipe);
+
+      //Frontend
+
+      setTarifler(prev =>
+        prev.map(recipe => {
+  
+          if (recipe.id === choosenRecipe.id) {
+            return { ...response.data }
+          }
+          else {
+            return { ...recipe }
+          }
+  
+        }))
 
 
     }
@@ -104,6 +96,11 @@ function App() {
     setChoosenRecipe(tarifler.find(tarif => tarif.id === id));
   }
 
+  useEffect(() => {
+
+    getAsync();
+
+  }, [])
 
 
 

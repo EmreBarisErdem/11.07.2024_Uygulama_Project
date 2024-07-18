@@ -96,9 +96,7 @@ const Main = ({ addRecipe, tarifler, choosenRecipe, setChoosenRecipe }) => {
         />
         {imageURLError ? <p></p> : <p>You must enter a image url!</p>}
 
-
-
-        <button type="submit">Add Your Recipe</button>
+        <button disabled={recipeTitle === "" || recipeDescription === "" || recipeImageURL === ""} type="submit">{choosenRecipe ? "Update Your Recipe" : "Add Your Recipe"}</button>
 
         <input 
         disabled={!choosenRecipe} 
