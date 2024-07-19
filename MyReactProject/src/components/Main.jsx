@@ -19,10 +19,6 @@ const Main = () => {
       descriptionError,
       imageURLError,
 
-      setTitleError,
-      setDescriptionError,
-      setImageURLError,
-
       resetForm,
       handleSubmit,
     
@@ -60,8 +56,8 @@ const Main = () => {
           placeholder="Recipe Image URL"
         />
         {imageURLError ? <p></p> : <p>You must enter a image url!</p>}
-
-        <button disabled={recipeTitle === "" || recipeDescription === "" || recipeImageURL === ""} type="submit"><MdOutlineAddCircleOutline size={24}/> {choosenRecipe ? "Update Your Recipe" : "Add Your Recipe"}</button>
+        <label></label>
+        <button disabled={recipeTitle === "" || recipeDescription === "" || recipeImageURL === ""} type="submit"><MdOutlineAddCircleOutline size={25}/> {choosenRecipe ? "Update Your Recipe" : "Add Your Recipe"}</button>
 
         <input 
         disabled={!choosenRecipe} 

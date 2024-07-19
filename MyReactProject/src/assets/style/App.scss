@@ -65,10 +65,11 @@ main{
     align-items: center;
     font-size: 28px;
     padding: 50px 5px ;
-    height: 1000px;
+    height: 1100px;
     h1{
         letter-spacing: 2px;
         padding: 0 5px;
+        text-align: center;
     }
     p{
         letter-spacing: 2px;
@@ -98,33 +99,37 @@ main{
             opacity: 0.8;
             background:snow;
             letter-spacing: 1.5px;
+            text-align: center;
         }
         textarea{
             opacity: 0.8;
-            height: 80px;
             border: solid 2px #d7198b;
             border-radius: 5px;
             font-size: 24px;
             background:snow;
             letter-spacing: 1.5px;
+            text-align: center;
+            height: auto;
+
         }
         p{
-            color: red;
+            color: rgb(255, 94, 0);
             font-size: 20px;
             padding: 0;
-            text-align: center;
             margin: 0;
-        
-        
+            text-align: center;
+            letter-spacing: 1.5px;
+ 
         }
         button{
             background-color: rgba(0, 0, 0, 0.811);
             font-size: 22px;
-            color: #13ca23;
+            color: #228b2b;
             border-radius: 4px;
-            height: 45px;
+            height: 50px;
             cursor: pointer;
             transition: .5s;
+            letter-spacing: 1.5px;
 
             &:hover{
                 background-color: rgba(133, 199, 26, 0.874);
@@ -182,11 +187,12 @@ main{
                 
             }
             img{
-                width: auto;
+                width: 290px;
                 height: 275px;
                 border: 1px solid rgb(132, 132, 132);
                 border-radius: 10px;
                 box-shadow: 0 0 5px black;
+                object-fit: cover;
                 cursor: pointer;
             }
             .card-button{
@@ -227,5 +233,28 @@ main{
             font-size: 24px;
         }
     }
-
-
+.search{
+    background: linear-gradient(rgba(255, 149, 104, 0.647),rgba(86, 52, 5, 0.764));
+    color: white;
+    border: 2px solid rgba(0, 0, 0, 0.591);
+    padding: 30px;
+    display: flex;
+    gap:20px;
+    justify-content: end;
+    input{
+        padding: 10px 10px;
+        height: 50px;
+        width: 20%;
+        border-radius: 5px;
+        border:none;
+        font-size: 24px;
+        &:focus{
+            outline: 3px solid rgb(255, 170, 0);
+            
+        }
+    }
+    label{
+        cursor: default;
+        color: black;
+    }
+}

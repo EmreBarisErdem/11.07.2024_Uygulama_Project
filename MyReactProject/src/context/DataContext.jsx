@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createContext, useEffect, useState } from "react";
+import { Flip, toast } from 'react-toastify';
 
 
 const DataContext = createContext();
@@ -17,6 +18,8 @@ export const DataProvider = ({children}) => {
   const [descriptionError, setDescriptionError] = useState(true);
   const [imageURLError, setImageURLError] = useState(true);
 
+  const [search, setSearch] = useState("");
+
 
   const url = "http://localhost:5174/fakeRecipes";
   
@@ -30,13 +33,11 @@ export const DataProvider = ({children}) => {
 
   }
 
-
   const postAsync = async (newPost) => {
 
     const response = await axios.post(url, newPost);
 
   }
-
 
   const deleteByIDAsync = async (ID) => {
 
@@ -51,10 +52,9 @@ export const DataProvider = ({children}) => {
     const response = await axios.patch(`${url}/${ID}`, { isDeleted: true });
   }
 
-
   const addRecipe = async (newRecipe) => {
 
-    let url = "http://localhost:5174/fakeRecipes";
+    let newUrl = "http://localhost:5174/fakeRecipes";
 
     if (!choosenRecipe) {
 
@@ -63,15 +63,27 @@ export const DataProvider = ({children}) => {
       //backend
       postAsync(newRecipe);
 
+      toast.success('New Recipe Added!', {
+        position: "bottom-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+        transition: Flip
+        });
     }
     else {
 
       //backend
+      newUrl += `/${choosenRecipe.id}`;
+      console.log(choosenRecipe);
 
-      url += `${choosenRecipe.id}`;
+      const response = await axios.put(newUrl, newRecipe);
 
-      const response = await axios.put(url, newRecipe);
-
+      console.log(response);
       //Frontend
 
       setRecipes(prev =>
@@ -86,15 +98,41 @@ export const DataProvider = ({children}) => {
   
         }))
 
+        toast.warn('Recipe updated!', {
+          position: "bottom-right",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Flip,
+          });
 
-    }
-    setChoosenRecipe("");
+          
+        }
+        setChoosenRecipe("");
 
   }
 
   const deleteRecipe = (id) => {
 
+    confirm("Do You want to delete this Recipe?");
+
     deleteByIDAsync(id);
+
+    toast.error('Recipe Deleted!', {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+      transition: Flip,
+      });
 
   }
 
@@ -103,9 +141,6 @@ export const DataProvider = ({children}) => {
     console.log(recipes.find(recipe => recipe.id === id));
   }
 
-  
-  
-  
   const handleSubmit = (e) => {
       e.preventDefault(); //submit butonunun sayfayı yenilemesini önlemek için...
       
@@ -141,7 +176,6 @@ export const DataProvider = ({children}) => {
             
         }
     };
-    
     
     //Formu Temizleme Fonksiyonu...
   const resetForm = () => {
