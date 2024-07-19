@@ -94,7 +94,7 @@ main{
             height: 40px;
             border: solid 2px #d7198b;
             border-radius: 5px;
-            font-size: 22px;
+            font-size: 24px;
             opacity: 0.8;
             background:snow;
             letter-spacing: 1.5px;
@@ -104,7 +104,7 @@ main{
             height: 80px;
             border: solid 2px #d7198b;
             border-radius: 5px;
-            font-size: 22px;
+            font-size: 24px;
             background:snow;
             letter-spacing: 1.5px;
         }
@@ -139,7 +139,7 @@ main{
         background-position: center;
         background-repeat: repeat;
         background-size: auto;
-        background-attachment: scroll;
+        background-attachment: fixed;
         background-clip: border-box;
 
 
@@ -169,9 +169,17 @@ main{
             height: auto;
             padding: 20px 10px;
             border-radius: 10px;
+            transition: .4s;
             &:hover{
                 transform: scale(1.009);
                 cursor: pointer;
+                box-shadow: 0 0 50px black;
+                transition: .4s;
+                border: 2px solid salmon;
+                .card-body{
+                   transform: scale(1.01);
+                }
+                
             }
             img{
                 width: auto;
