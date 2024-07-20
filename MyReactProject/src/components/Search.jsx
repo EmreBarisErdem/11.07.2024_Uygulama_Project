@@ -7,7 +7,7 @@ const Search = () => {
   return (
     <>
     <div className='search'>
-        <label><FaSearch size={45} /></label>
+        <label><FaSearch size={35} /></label>
         <input onChange={(e)=>setSearch(e.target.value)} type="text" placeholder='Search' />
     </div>
     </>

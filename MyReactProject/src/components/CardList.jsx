@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Card from './Card'
 import DataContext from '../context/DataContext'
-import Search from './Search';
+
 
 const CardList = () => {
   const {recipes} = useContext(DataContext);

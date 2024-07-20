@@ -1,0 +1,65 @@
+.sign-up{
+    background: linear-gradient(rgba(0, 0, 0, 0.636),rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.773)),url("https://cdn.pixabay.com/photo/2016/12/10/21/26/food-1898194_1280.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: rgb(255, 238, 0);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    .form-sign-up{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color:#c48d0d73 ;
+        padding: 20px;
+        border-radius: 10px;
+        width: 40%;
+        letter-spacing: 1.5px;
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 90%;
+            text-align: center;
+            input{
+                border-radius: 5px;
+                border: 1px solid #c48d0d73;
+                font-size: 16px;
+                padding: 5px;
+                margin: 5px;
+                text-align: center;
+                letter-spacing: 1.5px;
+                background-color: rgba(255, 250, 250, 0.9);
+            }
+            .sign-up-btn{
+                border: none;
+                cursor: pointer;
+                height: 40px;
+                width: 50%;
+                align-self: center;
+                border-radius: 5px;
+                background-color: rgba(64, 212, 64, 0.763);
+                transition: .5s;
+                letter-spacing: 1.5px;
+                &:hover{
+                    background-color: darkgreen;
+                    color: white;
+                    border: 1px solid black;
+                }
+            }
+            a{
+                text-decoration: none;
+                color: white;
+            }
+            
+        }
+    }
+
+}
+html,body,#root{
+    height: 100%;
+}

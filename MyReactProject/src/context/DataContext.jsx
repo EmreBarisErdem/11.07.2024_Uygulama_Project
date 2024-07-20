@@ -230,6 +230,9 @@ return <DataContext.Provider value={{
     setDescriptionError,
     setImageURLError,
 
+    search,
+    setSearch
+
 }}>
         {children}
     </DataContext.Provider>

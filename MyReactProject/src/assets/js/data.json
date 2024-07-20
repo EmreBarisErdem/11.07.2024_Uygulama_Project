@@ -107,13 +107,15 @@
       "id": "17",
       "title": "asd",
       "description": "aasdASDASD",
-      "image": "https://www.youtube.com/"
+      "image": "https://www.youtube.com/",
+      "isDeleted": true
     },
     {
       "id": "18",
       "title": "ASD",
       "description": "ASD",
-      "image": "https://www.youtube.com/"
+      "image": "https://www.youtube.com/",
+      "isDeleted": true
     }
   ]
 }
