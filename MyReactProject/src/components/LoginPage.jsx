@@ -28,11 +28,11 @@ const LoginPage = () => {
     <div className='login-page'>
 
         <div className="form-login">
-            <h3>Please Sign In</h3>
+            <h3>Sign In</h3>
 
             <form onSubmit={handleLogin}>
                 
-                <input value={username} onChange={e=>setUsername(e.target.value)} type="text" placeholder='UserName' />
+                <input value={username} onChange={e=>setUsername(e.target.value)} type="text" placeholder='Email' />
                 <input value={password} onChange={e=>setPassword(e.target.value)} type="text" placeholder='Password' />
                 <input className='login-btn' type="submit" value={"Login"} />
 
@@ -40,8 +40,8 @@ const LoginPage = () => {
 
         </div>
 
-        <Link className='visitor-login' to={"/"}>To Enter as Visitor</Link>
-        <Link  className='visitor-login' to={"/signup"}>To Sign Up</Link>
+        <Link  to={"/"}>To Enter as Visitor</Link>
+        <Link  to={"/signup"}>To Sign Up</Link>
     </div>
   )
 }

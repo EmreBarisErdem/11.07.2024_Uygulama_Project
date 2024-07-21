@@ -5,9 +5,10 @@ import Home from './components/Home'
 import { ToastContainer } from 'react-toastify'
 import { AuthProvider } from './context/AuthContext'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import PrivateRoute from './services/PrivateRoute'
 import 'react-toastify/dist/ReactToastify.css';
 import './assets/style/App.scss'
+import CardList from './components/CardList'
+import CustomerRoute from './services/CustomerRoute'
 
 
 function App() {
@@ -21,17 +22,24 @@ function App() {
 
               <Route path='/' element={<Home/>}>
 
-                  <Route path='/' element={<PrivateRoute element={<Main/>}/>}/>
+                  <Route path='/' element={<CustomerRoute element={<Main/>}/>}>
+
+                    <Route path='/main' element={<Main/>}/> 
+                    <Route path='/card-list' element={<CardList/>}/> 
+                  
+                  </Route>
 
               </Route>
 
+   
+              <Route path='/signup'element={<SignUpPage/>}/>
               <Route path='/login' element={<LoginPage/>}/>
 
-              <Route path='/signup'element={<SignUpPage/>}/>
 
             </Routes>
 
             <ToastContainer />
+            
           </BrowserRouter>
 
         </AuthProvider>

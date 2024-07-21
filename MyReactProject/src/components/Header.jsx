@@ -54,7 +54,7 @@ const Header = () => {
             </div>
           }
 
-          <button id='loginBtn' onClick={isAuthenticated ? handleLogout : handleLogin}>{isAuthenticated ? "Çıkış Yap" : "Giriş Yap"}</button>
+          <button id='loginBtn' onClick={isAuthenticated ? handleLogout : handleLogin}>{isAuthenticated ? "Logout" : "Sign In"}</button>
         </div>
 
         <ul>
@@ -64,13 +64,13 @@ const Header = () => {
           <li>
             {
               isAuthenticated &&
-              <Link to="add-recipe">Add Recipe</Link>
+              <Link to="/main">Add Recipe</Link>
             }
           </li>
           <li>
             {
               isAuthenticated &&
-              <Link to="card-list">All Recipes</Link>
+              <Link to="/card-list">All Recipes</Link>
             }
           </li>
 

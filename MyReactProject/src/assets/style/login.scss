@@ -3,6 +3,7 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: scroll;
     color: rgb(255, 238, 0);
     height: 100%;
     display: flex;
@@ -53,8 +54,9 @@
             
         }
     }
-    .visitor-login{
+    a{
         color: wheat;
+        font-size: 18px;
     }
 }
 html,body,#root{
